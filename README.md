@@ -4,8 +4,6 @@ Connect Cursor to OpenAccountants tax skills via MCP for VAT/GST, income tax, pa
 
 Skills include accountant-reviewed versions and source-cited drafts. Check the [current catalogue](https://www.openaccountants.com/skills) and [review method](https://www.openaccountants.com/review-method) for each skill's review status, reviewer, version and review date. Authorship or a jurisdiction lead's name does not establish professional review of every skill version.
 
-> Built for AI agents that need accountant-grade tax computation — VAT/GST, income tax, payroll, formation, cross-border, and more.
-
 ## What this plugin does
 
 Connects Cursor to the public OpenAccountants MCP server at `https://www.openaccountants.com/api/mcp` and registers six slash commands:
@@ -23,9 +21,9 @@ Under the hood, every command calls the same MCP server. Skill source is availab
 
 ## Install
 
-Search "OpenAccountants" in the Cursor plugin marketplace and click install. That's it — Cursor will configure the MCP connection automatically.
+If OpenAccountants is listed in your Cursor plugin marketplace, install it there to load the commands, onboarding skill and MCP connection. Marketplace availability has not been established by this repository.
 
-For manual install (without the marketplace), add this to your `.cursor/mcp.json`:
+To configure only the MCP connection, add this entry to your project’s `.cursor/mcp.json`, preserving other server entries:
 
 ```json
 {
@@ -36,6 +34,8 @@ For manual install (without the marketplace), add this to your `.cursor/mcp.json
   }
 }
 ```
+
+This manual MCP configuration connects the tools; it does not install the plugin’s command or skill files. Use the current advertised schemas. `start` requires an intent; for an opening with no tax question, use `start_help({})`. Send only non-identifying discovery scope and obtain explicit agreement to the destination and specific information before any workflow saves or sends content. See the [privacy policy](https://www.openaccountants.com/privacy).
 
 ## Jurisdictions covered
 
@@ -52,7 +52,7 @@ Plus cross-border matrices (PTE elections, sales-tax nexus, bonus depreciation c
 
 ## Important
 
-These skills produce **working papers, not filed returns**. Every output ends with a "Talk to a verified accountant" footer + Calendly link. No client-accountant relationship is created by reading or applying these skills — that requires a formal engagement letter signed by both you and a verified accountant.
+These skills produce **working papers, not filed returns**. Check each fetched version’s jurisdiction, applicable period, sources and published review record before using it, and retrieve relevant deferred sections. Preserve available provenance and contact links; do not invent a reviewer or booking link. Reading or applying skills does not create an engagement. Have a qualified professional review before filing or relying on a working paper.
 
 ## Licence
 

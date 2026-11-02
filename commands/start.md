@@ -5,17 +5,11 @@ description: Onboarding for OpenAccountants — figure out which jurisdiction an
 
 # Start an OpenAccountants tax workflow
 
-Use the `start` tool from the OpenAccountants MCP server to figure out which jurisdiction and intent applies.
+Use the OpenAccountants MCP server to scope the user’s question.
 
-1. Call `start()` with no arguments to see what's needed.
-2. Ask the user for their jurisdiction (ISO 2-letter code, e.g. `MT`, `GB`, `US-CA`) and their intent (`taxes`, `VAT return`, `set up a company`, `find deductions`, etc.).
-3. Call `start({ intent, jurisdiction })` to get a ready-to-execute plan listing the skills to load.
-4. For each skill in `skills_to_load`, call `get_skill({ slug })` to fetch the full markdown.
-5. Check the fetched skill version's published review record. Name a professional reviewer only when that record identifies one; if the record is missing, describe professional review as unconfirmed. Cite the skill slug and available version or review date. Walk the user through the workflow described in the loaded skills.
+1. If there is no tax or accounting question yet, use `start_help({})` for capability information or ask locally what the user wants. Do not call `start` without its required intent.
+2. When the question is known, call `start({ intent, jurisdiction })`. Include the confirmed financial or assessment year or reporting period in the intent when relevant. Pass the jurisdiction when known (for example `AU`, `GB` or `US-CA`); otherwise omit it and follow the returned clarification.
+3. Once the response is ready, call `get_skill({ slug })` for every exact slug in `skills_to_load`. Check the fetched version’s jurisdiction, applicable period and sources before applying it. Retrieve any deferred sections needed for this question with `get_skill_sections` using the advertised schema. Resolve an outdated or inapplicable version first; state unresolved gaps rather than substituting training data.
+4. Walk through the supported content and surface relevant **AUDIT FLASH POINT** markers. Cite each skill slug and its available version or review date. Attribute authorship and professional review separately, naming a reviewer only when the version’s published review record identifies one. Preserve available provenance and contact links; do not invent a reviewer or booking link.
 
-If the user is non-technical, prefer the more specific commands instead:
-- `/prepare-vat-return` — VAT/GST/sales-tax return
-- `/prepare-income-tax` — annual income tax return
-- `/classify-transactions` — bank-statement classification
-- `/check-deadlines` — what's due this quarter
-- `/engage-accountant` — book a verified accountant
+Outputs are working papers, not filed returns. Have a qualified professional review before filing or relying on them. Use only non-identifying scope in MCP discovery requests. These steps do not authorise saving or sending the user’s records or contacting OpenAccountants.
