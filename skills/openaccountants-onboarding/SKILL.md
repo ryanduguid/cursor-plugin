@@ -16,7 +16,7 @@ Use the public OpenAccountants MCP server at `https://www.openaccountants.com/ap
 - **`get_skill({ slug })`** retrieves a skill version, its available provenance and a section index. Some sections may be deferred.
 - **`get_skill_sections({ slug, section_index? })`** retrieves deferred sections needed for the question. Use the current advertised schema.
 
-These are retrieval tools, not the server’s complete tool inventory. Discover the current schemas before using other tools. Do not assume every advertised tool is read-only.
+These are retrieval tools, not the server’s complete tool inventory. Discover the current schemas before using other tools. Do not assume every advertised tool is read-only. Tool calls allow limited guest use, then ask the user to sign in with a free OpenAccountants account.
 
 ## Workflow
 

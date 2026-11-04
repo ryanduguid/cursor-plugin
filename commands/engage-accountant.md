@@ -9,7 +9,7 @@ Offer a way to discuss professional review or a formal engagement. This command 
 
 1. Identify the jurisdiction and the type of help the user wants, such as return review, tax planning, formation or payroll. Ask if needed.
 
-2. For a directory, use the published network at `https://www.openaccountants.com/network`. Do not treat skill authorship, research verification or a professional review of one skill version as evidence that someone is available, licensed for every service or the user’s engaged accountant.
+2. For a directory, use the published network at `https://www.openaccountants.com/network`, or call `list_verifiers({ jurisdiction: "<code>" })` for the named accountants who have signed off on that jurisdiction. Do not treat skill authorship, research verification or a professional review of one skill version as evidence that someone is available, licensed for every service or the user’s engaged accountant.
 
 3. Offer the central booking link: `https://calendly.com/openaccountants-info/30min`. The user chooses whether to open it and book. Verify current availability, fees, scope and professional credentials through the provider; do not promise a particular reviewer, free consultation, duration or liability outcome.
 

@@ -1,7 +1,7 @@
 {
   "name": "openaccountants",
   "displayName": "OpenAccountants — Tax & Accounting Skills",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Connect Cursor to OpenAccountants tax and accounting skills via MCP. Skills include accountant-reviewed versions and source-cited drafts; check each version's published review status.",
   "author": {
     "name": "OpenAccountants",

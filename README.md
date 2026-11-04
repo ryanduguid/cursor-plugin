@@ -12,9 +12,9 @@ Connects Cursor to the public OpenAccountants MCP server at `https://www.openacc
 |---|---|
 | `/start` | Onboarding — figures out which jurisdiction and workflow applies |
 | `/prepare-vat-return` | Guided VAT/GST/sales-tax return preparation |
-| `/prepare-income-tax` | Annual income tax return for any jurisdiction |
+| `/prepare-income-tax` | Annual income tax return for a jurisdiction |
 | `/classify-transactions` | Bank-statement → P&L classification by jurisdiction |
-| `/check-deadlines` | Upcoming filing & payment deadlines |
+| `/check-deadlines` | Upcoming filing and payment deadlines |
 | `/engage-accountant` | Offer an accountant directory or booking link |
 
 Under the hood, every command calls the same MCP server. Skill source is available in [openaccountants/openaccountants](https://github.com/openaccountants/openaccountants); see its [licensing document](https://github.com/openaccountants/openaccountants/blob/main/LICENSING.md) for content terms.
@@ -35,20 +35,20 @@ To configure only the MCP connection, add this entry to your project’s `.curso
 }
 ```
 
-This manual MCP configuration connects the tools; it does not install the plugin’s command or skill files. Use the current advertised schemas. `start` requires an intent; for an opening with no tax question, use `start_help({})`. Send only non-identifying discovery scope and obtain explicit agreement to the destination and specific information before any workflow saves or sends content. See the [privacy policy](https://www.openaccountants.com/privacy).
+This manual MCP configuration connects the tools; it does not install the plugin’s command or skill files. Tool calls allow limited guest use, then ask you to sign in with a free OpenAccountants account. Use the current advertised schemas. `start` requires an intent; for an opening with no tax question, use `start_help({})`. Send only non-identifying discovery scope and obtain explicit agreement to the destination and specific information before any workflow saves or sends content. See the [privacy policy](https://www.openaccountants.com/privacy).
 
-## Jurisdictions covered
+## Coverage
 
-Every UN member state has at least foundational coverage. Deep packs exist for:
+Skills cover more than 200 countries and territories, plus all 50 US states and DC. The `list_jurisdictions` tool returns the current list with skill and accountant-reviewed counts. Examples:
 
 - **Europe**: Malta, UK, Germany, Italy, France, Spain, Portugal, Ireland, Netherlands
-- **North America**: US federal + 24 deep state packs (CA, NY, TX, FL, IL, OH, PA, MA, NJ, NC, MI, OR, WA, NH, DE, VA, GA, AZ, CO, NV, MN, MO, MD, …); Canada federal + provincial
+- **North America**: United States (federal, all 50 states, and DC); Canada
 - **Asia**: India, Indonesia, China (in 简体中文), Pakistan, Singapore, Japan
 - **Latin America**: Brazil (in PT-BR), Mexico, Argentina, Chile
 - **Africa**: South Africa, Nigeria, Kenya, Egypt
 - **Middle East**: Saudi Arabia, UAE, Israel
 
-Plus cross-border matrices (PTE elections, sales-tax nexus, bonus depreciation conformity, 1099-K thresholds, FATCA/FBAR, GILTI/FDII/BEAT, etc.).
+Cross-border topics include PTE elections, sales-tax nexus, bonus depreciation conformity, 1099-K thresholds, FATCA/FBAR, and GILTI/FDII/BEAT.
 
 ## Important
 
