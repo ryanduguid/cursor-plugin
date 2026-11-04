@@ -2,7 +2,7 @@
   "name": "openaccountants",
   "displayName": "OpenAccountants — Tax & Accounting Skills",
   "version": "0.1.0",
-  "description": "On-demand access to 800+ accountant-verified tax skills across 190+ jurisdictions. Every skill is signed off by a named licensed accountant. Get accountant-grade VAT, income tax, payroll, formation, and cross-border tax computation directly in Cursor.",
+  "description": "Connect Cursor to OpenAccountants tax and accounting skills via MCP. Skills include accountant-reviewed versions and source-cited drafts; check each version's published review status.",
   "author": {
     "name": "OpenAccountants",
     "email": "info@openaccountants.com"
