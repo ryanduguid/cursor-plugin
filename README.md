@@ -39,10 +39,10 @@ This manual MCP configuration connects the tools; it does not install the plugin
 
 ## Coverage
 
-Skills cover more than 200 countries and territories, plus all 50 US states and DC. The `list_jurisdictions` tool returns the current list with skill and accountant-reviewed counts. Examples:
+Skills cover countries, territories and US states. The `list_jurisdictions` tool returns the current list with skill and accountant-reviewed counts. Examples:
 
 - **Europe**: Malta, UK, Germany, Italy, France, Spain, Portugal, Ireland, Netherlands
-- **North America**: United States (federal, all 50 states, and DC); Canada
+- **North America**: United States (federal and states); Canada
 - **Asia**: India, Indonesia, China (in 简体中文), Pakistan, Singapore, Japan
 - **Latin America**: Brazil (in PT-BR), Mexico, Argentina, Chile
 - **Africa**: South Africa, Nigeria, Kenya, Egypt
