@@ -14,7 +14,7 @@ description: List upcoming tax filing and payment deadlines for a specific juris
    - `search_skills({ query: "deadline", jurisdiction: "<code>" })`
    - Annual return + estimated tax + VAT/GST skills for the jurisdiction
    - Payroll skills if employer
-   - Call `get_skill({ slug })` for each exact slug selected; search snippets alone are not enough to build the calendar. Check the fetched version’s jurisdiction, applicable period and sources before applying it.
+   - Call `get_skill({ slug })` for each exact slug selected; search snippets alone are not enough to build the calendar. Check the fetched version's jurisdiction, applicable period and sources before applying it.
 
 3. Produce a chronological deadline calendar:
    - Date
@@ -27,8 +27,8 @@ description: List upcoming tax filing and payment deadlines for a specific juris
 
 5. Call out jurisdiction-specific quirks the skills flag (e.g. CA 30/40/0/30 estimated tax schedule; PA Act 32 PSD codes; NY MFI corporate first installment).
 
-6. Cite each skill slug and its available version or review date. Attribute authorship and professional review separately, naming a reviewer only when the version’s published review record identifies one. Do not invent a reviewer or booking link.
+6. Cite each skill slug and its available version or review date. Attribute authorship and professional review separately, naming a reviewer only when the version's published review record identifies one. Do not invent a reviewer or booking link.
 
 7. If the user wants a verified accountant to handle filings, include any booking link from the skill footer.
 
-Use only non-identifying scope in MCP discovery requests. These steps do not authorise saving or sending the user’s records or contacting OpenAccountants.
+Use only non-identifying scope in MCP discovery requests. These steps do not authorise saving or sending the user's records or contacting OpenAccountants.

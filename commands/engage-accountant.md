@@ -26,4 +26,4 @@ This command offers contact information; it does not send a working paper or con
    - No liability attaches to anyone until you and the chosen accountant sign a formal engagement
    - The verified accountants list at `/network` is the source of truth for who's licensed in which jurisdiction
 
-Use only non-identifying scope in MCP discovery requests. These steps do not authorise saving or sending the user’s records or contacting OpenAccountants.
+Use only non-identifying scope in MCP discovery requests. These steps do not authorise saving or sending the user's records or contacting OpenAccountants.

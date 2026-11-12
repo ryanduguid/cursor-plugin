@@ -14,7 +14,7 @@ description: Classify bank statement transactions into accounting categories usi
 2. Load the relevant skills via MCP:
    - Call `start({ intent: "Classify transactions for <purpose> for <confirmed period>", jurisdiction: "<code>" })` and load each exact slug in `skills_to_load` with `get_skill({ slug })`
    - For further discovery: `search_skills({ query: "bookkeeping", jurisdiction: "<code>" })`, then load the exact returned slugs. Do not construct a slug from the country code.
-   - Check the fetched version’s jurisdiction, applicable period and sources before applying it.
+   - Check the fetched version's jurisdiction, applicable period and sources before applying it.
 
 3. For each transaction, output a row:
    - Date, description, amount
@@ -25,6 +25,6 @@ description: Classify bank statement transactions into accounting categories usi
 
 4. Surface any **AUDIT FLASH POINT** items from the loaded skills.
 
-5. Conclude with a summary table and recommend a qualified professional review the classification before it is used for filing. Cite each skill slug and its available version or review date. Attribute authorship and professional review separately, naming a reviewer only when the version’s published review record identifies one. Include any booking link the skill footer includes; do not invent a reviewer or booking link.
+5. Conclude with a summary table and recommend a qualified professional review the classification before it is used for filing. Cite each skill slug and its available version or review date. Attribute authorship and professional review separately, naming a reviewer only when the version's published review record identifies one. Include any booking link the skill footer includes; do not invent a reviewer or booking link.
 
-Keep bank statements and identifiers out of MCP discovery requests. These steps do not authorise saving or sending the user’s records or contacting OpenAccountants.
+Keep bank statements and identifiers out of MCP discovery requests. These steps do not authorise saving or sending the user's records or contacting OpenAccountants.

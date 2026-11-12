@@ -10,9 +10,9 @@ You are working inside Cursor with the OpenAccountants plugin installed. The plu
 ## Available MCP tools
 
 - **`start({ intent, jurisdiction? })`** — front door. Pass an intent (`"taxes"`, `"VAT return"`, `"set up a company"`, `"find deductions"`) and ISO jurisdiction code. Returns a ready-to-execute plan listing the skills to load. Call this FIRST when a user asks for tax/accounting help.
-- **`list_skills({ jurisdiction?, category? })`** — list published skills. Filter by jurisdiction (`"MT"`, `"GB"`, `"US-CA"`) or category.
-- **`get_skill({ slug })`** — fetch a single skill's full markdown and provenance footer. Keep the footer as returned, including its trust label and any booking link.
-- **`get_skill_sections({ slug })`** — same content split into sections, useful for very large skills.
+- **`search_skills({ jurisdiction?, domain? })`** — without a query, lists published skills with their approval labels. Filter by jurisdiction (`"MT"`, `"GB"`, `"US-CA"`) or domain; page with `offset` and `next_offset`.
+- **`get_skill({ slug })`** — fetch a single skill's compact core plus `section_index` and provenance footer. Keep the footer as returned, including its trust label and any booking link.
+- **`get_skill({ slug, sections | all_sections })`** — read sections listed in `section_index` that were not inlined, useful for very large skills.
 - **`search_skills({ query, jurisdiction? })`** — keyword search across published skill content.
 
 ## Workflow
