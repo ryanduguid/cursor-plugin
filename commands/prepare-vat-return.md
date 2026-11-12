@@ -1,24 +1,30 @@
 ---
 name: prepare-vat-return
-description: Prepare a VAT, GST, or sales-tax return for a specific jurisdiction using OpenAccountants skills with version-specific review status.
+description: Prepare a VAT, GST, or sales-tax return for a specific jurisdiction using OpenAccountants skills.
 ---
 
 # Prepare a VAT / GST / sales-tax return
 
-1. Identify the jurisdiction and the exact reporting period from the user’s request or ask for them. Use the local tax name, such as GST for Australia.
+1. Ask the user which jurisdiction (e.g. Malta, UK, Germany, Italy, India GST, US-CA sales tax) and which period (e.g. `Q1 2025`, `January 2025`).
 
-2. Use the OpenAccountants MCP tools:
-   - Call `start({ intent: "Prepare the <VAT/GST/sales-tax> return for <confirmed period>", jurisdiction: "<code>" })`, including any specific question.
-   - Call `get_skill({ slug })` for each exact slug returned in `skills_to_load`. Do not construct a jurisdiction-based slug.
-   - For EU jurisdictions, also load `eu-vat-directive` and `vat-workflow-base`, checking their applicability before use.
-   - Check the fetched version’s jurisdiction, applicable period and sources before applying it. Retrieve any deferred sections needed for this question with `get_skill_sections` using the advertised schema. Resolve an outdated or inapplicable version first; state unresolved gaps rather than substituting training data.
+2. Use the OpenAccountants MCP tools to load the right skill:
+   - `search_skills({ query: "VAT return", jurisdiction: "<ISO code>" })` to find the right slug; load the exact returned slug rather than constructing one
+   - `get_skill({ slug: "<chosen slug>" })` to load the full skill content
+   - For EU jurisdictions, also load `eu-vat-directive` and `vat-workflow-base`
+   - Check the fetched version’s jurisdiction, applicable period and sources before applying it
 
-3. Apply the supported classification and calculation rules to the transactions or invoices. Load any dependencies identified by the fetched skills before using them.
+3. Apply the loaded skill's classification rules to the user's transactions or invoices.
 
-4. Produce a working paper with transaction classifications, applicable return boxes, totals, reconciliation, deadlines and filing mechanics. Include only fields supported by the fetched sources for that period and identify missing evidence. Surface relevant **AUDIT FLASH POINT** markers. Cite each skill slug and its available version or review date. Attribute authorship and professional review separately, naming a reviewer only when the version’s published review record identifies one. Preserve available provenance and contact links; do not invent a reviewer or booking link.
+4. Produce a working paper showing:
+   - Each transaction classified by VAT box / code
+   - Box totals
+   - Reconciliation against gross receipts
+   - Deadlines and filing mechanics for the jurisdiction
+   - Provenance footer, kept as the skill returns it
+   - Each skill slug and its available version or review date. Attribute authorship and professional review separately, naming a reviewer only when the version’s published review record identifies one.
 
-5. Remind the user that the working paper is not a filed return and a qualified professional must review before filing. Offer an available accountant contact link if requested.
+5. Remind the user this working paper needs a qualified professional review before filing. Keep any booking link the skill footer includes; do not invent a reviewer or booking link.
 
-Cross-border OSS/IOSS, margin schemes, partial exemption, VAT groups and capital goods schemes require skills that explicitly cover them. Do not apply a generic return skill beyond its stated scope.
+**Out of scope** by default: cross-border OSS/IOSS (load the cross-border skills), margin schemes, partial exemption, VAT groups, capital goods scheme — unless the skill explicitly covers them.
 
 Use only non-identifying scope in MCP discovery requests. These steps do not authorise saving or sending the user’s records or contacting OpenAccountants.
